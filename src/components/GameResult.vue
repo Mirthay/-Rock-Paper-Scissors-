@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>You {{ winOrLose }}</h2>
+    <h2>{{ gameResult }}</h2>
     <p>Player Selected: {{ playerSelected }}</p>
     <p>Computer Selected: {{ pcSelected }}</p>
     <div>
@@ -14,6 +14,8 @@ export default {
   methods: {
     playerSelect(payload) {
       this.$store.dispatch("playerSelect", payload);
+      this.$store.dispatch("pcSelect", payload);
+      this.$store.dispatch("winOrLose", payload);
     },
   },
   computed: {
@@ -23,11 +25,21 @@ export default {
     pcSelected() {
       return this.$store.getters.pcSelected;
     },
-    winOrLose() {
-      return this.$store.getters.winner === "player" ? "Win" : "Lose";
+    gameResult() {
+      return this.$store.getters.gameResult;
     },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+h2 {
+  margin: 5vw;
+}
+p {
+  margin: 5vw;
+}
+button {
+  margin: 7vw;
+}
+</style>

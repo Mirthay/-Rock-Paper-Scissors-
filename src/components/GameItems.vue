@@ -12,13 +12,14 @@
 export default {
   methods: {
     pcSelect() {
-      var a = ["Paper", "Scissors", "Rock"];
-      var payload = a[Math.floor(a.length * Math.random())];
+      const a = ["Paper", "Scissors", "Rock"];
+      const payload = a[Math.floor(a.length * Math.random())];
       this.$store.dispatch("pcSelect", payload);
     },
     playerSelect(payload) {
       this.$store.dispatch("playerSelect", payload);
       this.pcSelect();
+      this.$store.dispatch("whoWin");
     },
   },
   computed: {},
@@ -26,9 +27,11 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  display: block;
+}
 section {
-  background: violet;
-  flex: 1;
+  background: khaki;
   text-align: center;
 }
 div {

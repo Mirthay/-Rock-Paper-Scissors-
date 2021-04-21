@@ -12,15 +12,44 @@ const store = createStore({
          - Scissors beats Paper </p> `,
       showRules: false,
       playerSelected: null,
-      pcSelected: "test",
+      pcSelected: null,
+      gameResult: "WIN/LOSE",
     };
   },
   mutations: {
+    whoWin() {
+      if (this.state.playerSelected === this.state.pcSelected) {
+        return (this.state.gameResult = "DRAW !!!");
+      } else if (
+        this.state.playerSelected === "Paper" &&
+        this.state.pcSelected === "Rock"
+      ) {
+        this.state.score++;
+        return (this.state.gameResult = "WIN !!!");
+      } else if (
+        this.state.playerSelected === "Scissors" &&
+        this.state.pcSelected === "Paper"
+      ) {
+        this.state.score++;
+        return (this.state.gameResult = "WIN !!!");
+      } else if (
+        this.state.playerSelected === "Rock" &&
+        this.state.pcSelected === "Scissors"
+      ) {
+        this.state.score++;
+        return (this.state.gameResult = "WIN !!!");
+      }
+      this.state.score--;
+      return (this.state.gameResult = "LOST !!!");
+    },
     playerSelect(state, payload) {
       state.playerSelected = payload;
     },
     pcSelect(state, payload) {
       state.pcSelected = payload;
+    },
+    winOrLose(state, payload) {
+      state.gameResult = payload;
     },
   },
   actions: {
@@ -29,6 +58,12 @@ const store = createStore({
     },
     pcSelect(context, payload) {
       context.commit("pcSelect", payload);
+    },
+    winOrLose(context, payload) {
+      context.commit("winOrLose", payload);
+    },
+    whoWin(context, payload) {
+      context.commit("whoWin", payload);
     },
   },
   getters: {
@@ -49,6 +84,9 @@ const store = createStore({
     },
     pcSelected(state) {
       return state.pcSelected;
+    },
+    gameResult(state) {
+      return state.gameResult;
     },
   },
 });
