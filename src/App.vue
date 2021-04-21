@@ -2,7 +2,7 @@
   <the-header> </the-header>
   <button @click="triggerRules">{{ showOrHide }} Rules</button>
   <the-rules v-if="showRules"></the-rules>
-  <game-items></game-items>
+  <game-items v-if="!notSelected"></game-items>
 </template>
 
 <script>
@@ -27,6 +27,9 @@ export default {
     },
     showOrHide() {
       return this.showRules ? "Hide" : "Show";
+    },
+    notSelected() {
+      return this.$store.getters.notSelected;
     },
   },
 };

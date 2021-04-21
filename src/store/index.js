@@ -10,11 +10,21 @@ const store = createStore({
       - Paper beats Rock <br> 
          - Rock beats Scissors <br> 
          - Scissors beats Paper </p> `,
-      showRules: true,
+      showRules: false,
+      playerSelected: null,
+      computerSelected: null,
     };
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    playerSelect(state, payload) {
+      state.playerSelected = payload;
+    },
+  },
+  actions: {
+    playerSelect(context, payload) {
+      context.commit("playerSelect", payload);
+    },
+  },
   getters: {
     title(state) {
       return state.title;
@@ -27,6 +37,9 @@ const store = createStore({
     },
     score(state) {
       return state.score;
+    },
+    notSelected(state) {
+      return state.playerSelected;
     },
   },
 });
