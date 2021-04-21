@@ -22,6 +22,12 @@ const store = createStore({
     showRules(state) {
       return state.showRules;
     },
+    rules(state) {
+      return state.rules;
+    },
+    score(state) {
+      return state.score;
+    },
   },
 });
 
