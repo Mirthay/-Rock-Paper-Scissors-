@@ -1,9 +1,13 @@
 <template>
   <section>
     <div>
-      <button @click="playerSelect('Paper')">Paper</button>
-      <button @click="playerSelect('Scissors')">Scissors</button>
-      <button @click="playerSelect('Rock')">Rock</button>
+      <img src="../assets/icon-paper.svg" @click="playerSelect('Paper')" />
+
+      <img
+        src="../assets/icon-scissors.svg"
+        @click="playerSelect('Scissors')"
+      />
+      <img src="../assets/icon-rock.svg" @click="playerSelect('Rock')" />
     </div>
   </section>
 </template>
@@ -39,7 +43,7 @@ div {
   width: max-content;
   justify-content: center;
 }
-button {
+img {
   margin: 5vw;
 }
 </style>

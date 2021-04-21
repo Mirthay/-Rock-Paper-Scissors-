@@ -13,34 +13,37 @@ const store = createStore({
       showRules: false,
       playerSelected: null,
       pcSelected: null,
-      gameResult: "WIN/LOSE",
+      gameResult: null,
+      winMsg: "WIN !!!",
+      loseMsg: "LOST !!!",
+      drawMsg: "DRAW !!!",
     };
   },
   mutations: {
     whoWin() {
       if (this.state.playerSelected === this.state.pcSelected) {
-        return (this.state.gameResult = "DRAW !!!");
+        return (this.state.gameResult = this.state.drawMsg);
       } else if (
         this.state.playerSelected === "Paper" &&
         this.state.pcSelected === "Rock"
       ) {
         this.state.score++;
-        return (this.state.gameResult = "WIN !!!");
+        return (this.state.gameResult = this.state.winMsg);
       } else if (
         this.state.playerSelected === "Scissors" &&
         this.state.pcSelected === "Paper"
       ) {
         this.state.score++;
-        return (this.state.gameResult = "WIN !!!");
+        return (this.state.gameResult = this.state.winMsg);
       } else if (
         this.state.playerSelected === "Rock" &&
         this.state.pcSelected === "Scissors"
       ) {
         this.state.score++;
-        return (this.state.gameResult = "WIN !!!");
+        return (this.state.gameResult = this.state.winMsg);
       }
       this.state.score--;
-      return (this.state.gameResult = "LOST !!!");
+      return (this.state.gameResult = this.state.loseMsg);
     },
     playerSelect(state, payload) {
       state.playerSelected = payload;
