@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>{{ title }} The Couches</h2>
+    <h2>{{ title }}</h2>
     <div></div>
     <slot></slot>
   </section>
@@ -10,7 +10,7 @@
 export default {
   computed: {
     title() {
-      return this.$store.getters.title;
+      return this.$store.state.title;
     },
   },
 };
@@ -18,24 +18,11 @@ export default {
 
 <style scoped>
 section {
-  display: flex;
+  text-align: center;
   max-width: 60rem;
   margin: 2rem auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
   border-radius: 10px;
-}
-
-h2 {
-  flex: 1;
-  margin-right: 100px;
-}
-div {
-  flex: 1;
-}
-button {
-  margin: 5px;
-  margin-top: 25px;
-  margin-right: 15px;
 }
 </style>

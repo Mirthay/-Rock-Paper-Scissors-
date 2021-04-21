@@ -3,17 +3,24 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
-      title: "Rock,Paper,Scissors",
+      title: "Rock, Paper, Scissors",
       score: 0,
-      rules:
-        "If the player wins, they gain 1 point. If the computer wins, the player loses one point. - Paper beats Rock -Rock beats Scissors - Scissors beats Paper ",
+      rules: `<p>If the player wins, they gain 1 point. If the computer wins, the player loses one point. <br>
+        <br> 
+      - Paper beats Rock <br> 
+         - Rock beats Scissors <br> 
+         - Scissors beats Paper </p> `,
+      showRules: true,
     };
   },
   mutations: {},
   actions: {},
   getters: {
     title(state) {
-      state.title;
+      return state.title;
+    },
+    showRules(state) {
+      return state.showRules;
     },
   },
 });
