@@ -1,6 +1,8 @@
 <template>
   <section>
-    <p>Player Selectet: {{ playerSelected }}</p>
+    <h2>You {{ winOrLose }}</h2>
+    <p>Player Selected: {{ playerSelected }}</p>
+    <p>Computer Selected: {{ pcSelected }}</p>
     <div>
       <button @click="playerSelect(null)">Again</button>
     </div>
@@ -18,6 +20,14 @@ export default {
     playerSelected() {
       return this.$store.getters.playerSelected;
     },
+    pcSelected() {
+      return this.$store.getters.pcSelected;
+    },
+    winOrLose() {
+      return this.$store.getters.winner === "player" ? "Win" : "Lose";
+    },
   },
 };
 </script>
+
+<style></style>

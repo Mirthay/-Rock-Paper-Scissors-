@@ -1,9 +1,9 @@
 <template>
   <section>
     <div>
-      <button @click="playerSelect('paper')">Paper</button>
-      <button @click="playerSelect('scissors')">Scissors</button>
-      <button @click="playerSelect('rock')">Rock</button>
+      <button @click="playerSelect('Paper')">Paper</button>
+      <button @click="playerSelect('Scissors')">Scissors</button>
+      <button @click="playerSelect('Rock')">Rock</button>
     </div>
   </section>
 </template>
@@ -11,10 +11,17 @@
 <script>
 export default {
   methods: {
+    pcSelect() {
+      var a = ["Paper", "Scissors", "Rock"];
+      var payload = a[Math.floor(a.length * Math.random())];
+      this.$store.dispatch("pcSelect", payload);
+    },
     playerSelect(payload) {
       this.$store.dispatch("playerSelect", payload);
+      this.pcSelect();
     },
   },
+  computed: {},
 };
 </script>
 

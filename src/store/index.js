@@ -12,17 +12,23 @@ const store = createStore({
          - Scissors beats Paper </p> `,
       showRules: false,
       playerSelected: null,
-      computerSelected: null,
+      pcSelected: "test",
     };
   },
   mutations: {
     playerSelect(state, payload) {
       state.playerSelected = payload;
     },
+    pcSelect(state, payload) {
+      state.pcSelected = payload;
+    },
   },
   actions: {
     playerSelect(context, payload) {
       context.commit("playerSelect", payload);
+    },
+    pcSelect(context, payload) {
+      context.commit("pcSelect", payload);
     },
   },
   getters: {
@@ -40,6 +46,9 @@ const store = createStore({
     },
     playerSelected(state) {
       return state.playerSelected;
+    },
+    pcSelected(state) {
+      return state.pcSelected;
     },
   },
 });
