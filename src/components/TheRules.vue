@@ -1,6 +1,10 @@
 <template>
   <section>
     <p v-html="rules"></p>
+    <img
+      src="../game-desing/design/original/mobile-rules-modal.jpg"
+      alt="rules"
+    />
   </section>
 </template>
 
@@ -24,5 +28,9 @@ section {
 }
 p {
   text-align: center;
+}
+img {
+  height: 700px;
+  margin-top: -15px;
 }
 </style>
