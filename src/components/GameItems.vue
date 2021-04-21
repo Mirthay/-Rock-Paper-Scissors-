@@ -25,7 +25,7 @@
 export default {
   methods: {
     pcSelect() {
-      const a = ["Paper", "Scissors", "Rock"];
+      const a = this.$store.state.pcOptions;
       const payload = a[Math.floor(a.length * Math.random())];
       this.$store.dispatch("pcSelect", payload);
     },
@@ -40,9 +40,6 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  display: block;
-}
 section {
   background: rgb(167, 140, 240);
   text-align: center;
