@@ -8,7 +8,7 @@
 export default {
   computed: {
     rules() {
-      return this.$store.state.rules;
+      return this.$store.getters.rules;
     },
   },
 };
