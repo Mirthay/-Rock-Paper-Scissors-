@@ -17,28 +17,22 @@ const store = createStore({
       winMsg: "WIN !!!",
       loseMsg: "LOST !!!",
       drawMsg: "DRAW !!!",
+      pcOptions: ["Paper", "Scissors", "Rock"],
     };
   },
   mutations: {
     whoWin() {
-      if (this.state.playerSelected === this.state.pcSelected) {
+      const player = this.state.playerSelected;
+      const pc = this.state.pcSelected;
+      if (player === pc) {
         return (this.state.gameResult = this.state.drawMsg);
-      } else if (
-        this.state.playerSelected === "Paper" &&
-        this.state.pcSelected === "Rock"
-      ) {
+      } else if (player === "Paper" && pc === "Rock") {
         this.state.score++;
         return (this.state.gameResult = this.state.winMsg);
-      } else if (
-        this.state.playerSelected === "Scissors" &&
-        this.state.pcSelected === "Paper"
-      ) {
+      } else if (player === "Scissors" && pc === "Paper") {
         this.state.score++;
         return (this.state.gameResult = this.state.winMsg);
-      } else if (
-        this.state.playerSelected === "Rock" &&
-        this.state.pcSelected === "Scissors"
-      ) {
+      } else if (player === "Rock" && pc === "Scissors") {
         this.state.score++;
         return (this.state.gameResult = this.state.winMsg);
       }

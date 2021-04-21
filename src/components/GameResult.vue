@@ -4,6 +4,12 @@
       YOU:<br /><br />
       {{ playerSelected }}
     </h4>
+    <img
+      v-if="playerSelected === 'Scissors'"
+      src="../assets/icon-scissors.svg"
+    />
+    <img v-else-if="playerSelected === 'Rock'" src="../assets/icon-rock.svg" />
+    <img v-else src="../assets/icon-paper.svg" />
 
     <div>
       <h2>{{ gameResult }}</h2>
@@ -13,6 +19,9 @@
       THE HOUSE:<br /><br />
       {{ pcSelected }}
     </h4>
+    <img v-if="pcSelected === 'Scissors'" src="../assets/icon-scissors.svg" />
+    <img v-else-if="pcSelected === 'Rock'" src="../assets/icon-rock.svg" />
+    <img v-else src="../assets/icon-paper.svg" />
   </section>
 </template>
 
