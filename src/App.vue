@@ -2,16 +2,19 @@
   <the-header> </the-header>
   <button @click="triggerRules">{{ showOrHide }} Rules</button>
   <the-rules v-if="showRules"></the-rules>
+  <game-items></game-items>
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
 import TheRules from "./components/TheRules.vue";
+import GameItems from "./components/GameItems.vue";
 
 export default {
   components: {
     TheHeader,
     TheRules,
+    GameItems,
   },
   methods: {
     triggerRules() {
