@@ -3,17 +3,20 @@
   <button @click="triggerRules">{{ showOrHide }} Rules</button>
   <the-rules v-if="showRules"></the-rules>
   <game-items v-if="!notSelected"></game-items>
+  <game-result v-if="notSelected"></game-result>
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
 import TheRules from "./components/TheRules.vue";
 import GameItems from "./components/GameItems.vue";
+import GameResult from "./components/GameResult.vue";
 
 export default {
   components: {
     TheHeader,
     TheRules,
+    GameResult,
     GameItems,
   },
   methods: {
@@ -44,5 +47,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   background: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+}
+section {
+  display: flex;
+  text-align: center;
+  max-width: 60rem;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  border-radius: 10px;
 }
 </style>
