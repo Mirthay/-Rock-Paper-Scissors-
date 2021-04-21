@@ -1,12 +1,18 @@
 <template>
   <section>
-    <p>YOU PICKED: {{ playerSelected }}</p>
+    <h4>
+      YOU:<br /><br />
+      {{ playerSelected }}
+    </h4>
 
     <div>
       <h2>{{ gameResult }}</h2>
       <button @click="playerSelect(null)">Play again</button>
     </div>
-    <p>THE HOUSE PICKED: {{ pcSelected }}</p>
+    <h4>
+      THE HOUSE:<br /><br />
+      {{ pcSelected }}
+    </h4>
   </section>
 </template>
 
@@ -35,14 +41,15 @@ export default {
 
 <style scoped>
 h2 {
-  margin: 2vw;
   margin-bottom: 1vw;
+  padding-left: 1vw;
+  padding-bottom: 20px;
 }
-p {
-  margin: 5vw;
+
+h4 {
+  width: 30%;
 }
-button {
-  margin: 2vw;
-  margin-top: 1vw;
+div {
+  width: 40%;
 }
 </style>
