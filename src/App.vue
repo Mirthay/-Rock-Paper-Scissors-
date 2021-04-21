@@ -1,5 +1,5 @@
 <template>
-  <TheHeader />
+  <the-header> </the-header>
 </template>
 
 <script>
@@ -20,5 +20,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
 }
 </style>
