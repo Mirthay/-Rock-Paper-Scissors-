@@ -34,8 +34,16 @@ section {
 h2 {
   flex: 1;
   text-align: left;
+  max-width: 150px;
 }
 p {
-  text-align: center;
+  font-size: 20px;
+  text-align: right;
+  margin-right: 40px;
+}
+div {
+  text-align: right;
+  flex: 1;
+  max-width: 1400px;
 }
 </style>

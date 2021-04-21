@@ -5,11 +5,11 @@ const store = createStore({
     return {
       title: "Rock, Paper, Scissors",
       score: 0,
-      rules: `<p>If the player wins, they gain 1 point. If the computer wins, the player loses one point. <br>
+      rules: `<p>If the player wins, they gain 1 point.<br><br> If the computer wins, the player loses one point. <br>
         <br> 
-      - Paper beats Rock <br> 
-         - Rock beats Scissors <br> 
-         - Scissors beats Paper </p> `,
+          Paper beats Rock <br><br> 
+          Rock beats Scissors <br> <br>
+          Scissors beats Paper </p> `,
       showRules: false,
       playerSelected: null,
       pcSelected: null,

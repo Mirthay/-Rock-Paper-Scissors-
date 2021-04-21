@@ -1,13 +1,22 @@
 <template>
   <section>
     <div>
-      <img src="../assets/icon-paper.svg" @click="playerSelect('Paper')" />
+      <img
+        class="btn1"
+        src="../assets/icon-paper.svg"
+        @click="playerSelect('Paper')"
+      />
 
       <img
+        class="btn2"
         src="../assets/icon-scissors.svg"
         @click="playerSelect('Scissors')"
       />
-      <img src="../assets/icon-rock.svg" @click="playerSelect('Rock')" />
+      <img
+        class="btn3"
+        src="../assets/icon-rock.svg"
+        @click="playerSelect('Rock')"
+      />
     </div>
   </section>
 </template>
@@ -35,7 +44,7 @@ h2 {
   display: block;
 }
 section {
-  background: khaki;
+  background: rgb(167, 140, 240);
   text-align: center;
 }
 div {
@@ -45,5 +54,19 @@ div {
 }
 img {
   margin: 5vw;
+  border: rgb(103, 103, 192) 15px solid;
+  border-radius: 50%;
+  padding: 20px;
+  background: ivory;
+  box-shadow: 5px 7px black;
+}
+img:hover {
+  cursor: pointer;
+}
+.btn2 {
+  border-color: rgba(255, 196, 0, 0.863);
+}
+.btn3 {
+  border-color: rgba(243, 75, 52, 0.829);
 }
 </style>

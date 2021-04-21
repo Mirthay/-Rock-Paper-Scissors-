@@ -27,7 +27,7 @@ section {
   border-radius: 10px;
 }
 p {
-  text-align: center;
+  text-align: left;
 }
 img {
   height: 700px;
