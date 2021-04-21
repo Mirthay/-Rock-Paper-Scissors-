@@ -38,7 +38,7 @@ const store = createStore({
     score(state) {
       return state.score;
     },
-    notSelected(state) {
+    playerSelected(state) {
       return state.playerSelected;
     },
   },
