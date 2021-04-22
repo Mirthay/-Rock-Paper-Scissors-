@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-import TheHeader from "./components/TheHeader.vue";
 import TheRules from "./components/TheRules.vue";
+import App from "./App.vue";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", redirect: "/game" },
-    { path: "/game", component: TheHeader },
+    { path: "/game", component: App },
+    { path: "/:notFound(.*)", redirect: "/game" },
     { path: "/rules", component: TheRules },
   ],
 });
