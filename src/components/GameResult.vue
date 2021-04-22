@@ -6,10 +6,12 @@
         {{ playerSelected }}
       </h4>
       <img
+        class="btn2"
         v-if="playerSelected === 'Scissors'"
         src="../assets/icon-scissors.svg"
       />
       <img
+        class="btn3"
         v-else-if="playerSelected === 'Rock'"
         src="../assets/icon-rock.svg"
       />
@@ -24,8 +26,16 @@
         THE HOUSE:<br /><br />
         {{ pcSelected }}
       </h4>
-      <img v-if="pcSelected === 'Scissors'" src="../assets/icon-scissors.svg" />
-      <img v-else-if="pcSelected === 'Rock'" src="../assets/icon-rock.svg" />
+      <img
+        class="btn2"
+        v-if="pcSelected === 'Scissors'"
+        src="../assets/icon-scissors.svg"
+      />
+      <img
+        class="btn3"
+        v-else-if="pcSelected === 'Rock'"
+        src="../assets/icon-rock.svg"
+      />
       <img v-else src="../assets/icon-paper.svg" />
     </div>
   </section>
@@ -66,15 +76,12 @@ h2 {
 
 div .left {
   grid-column: 1;
-  width: 30%;
 }
 div .right {
   grid-column: 3;
-  width: 30%;
 }
 div .mid {
   grid-column: 2;
-  width: 40%;
 }
 img {
   grid-column: 3;
@@ -84,5 +91,11 @@ img {
   padding: 15px;
   background: ivory;
   box-shadow: 5px 7px black;
+}
+.btn2 {
+  border-color: rgba(255, 196, 0, 0.863);
+}
+.btn3 {
+  border-color: rgba(243, 75, 52, 0.829);
 }
 </style>
