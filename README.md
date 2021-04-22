@@ -1,4 +1,4 @@
-# first-project
+# Rock,Paper,Scissors
 
 ## Project setup
 ```
