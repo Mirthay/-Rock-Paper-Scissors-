@@ -59,7 +59,10 @@ img {
 }
 img:hover {
   cursor: pointer;
+  border: 15px solid;
+  border-color: rgba(185, 235, 19, 0.87);
 }
+
 .btn2 {
   border-color: rgba(255, 196, 0, 0.863);
 }
