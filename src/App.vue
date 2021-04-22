@@ -1,7 +1,9 @@
 <template>
-  <the-header> </the-header>
-  <button @click="triggerRules">{{ showOrHide }} Rules</button>
   <the-rules v-if="showRules"></the-rules>
+  <button @click="triggerRules">{{ showOrHide }} Rules</button>
+
+  <the-header> </the-header>
+
   <game-items v-if="!playerSelected"></game-items>
   <game-result v-if="playerSelected"></game-result>
 </template>
