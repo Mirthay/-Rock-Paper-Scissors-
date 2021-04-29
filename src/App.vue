@@ -1,5 +1,4 @@
 <template>
-  <router-view></router-view>
   <the-rules v-if="showRules"></the-rules>
   <button @click="triggerRules">{{ showOrHide }} Rules</button>
 
