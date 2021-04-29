@@ -1,13 +1,12 @@
 <template>
-  <router-view>
-    <the-rules v-if="showRules"></the-rules>
-    <button @click="triggerRules">{{ showOrHide }} Rules</button>
+  <router-view></router-view>
+  <the-rules v-if="showRules"></the-rules>
+  <button @click="triggerRules">{{ showOrHide }} Rules</button>
 
-    <the-header> </the-header>
+  <the-header> </the-header>
 
-    <game-items v-if="!playerSelected"></game-items>
-    <game-result v-if="playerSelected"></game-result>
-  </router-view>
+  <game-items v-if="!playerSelected"></game-items>
+  <game-result v-if="playerSelected"></game-result>
 </template>
 <script>
 import TheHeader from "./components/TheHeader.vue";
