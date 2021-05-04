@@ -1,22 +1,21 @@
 <template>
-  <the-rules v-if="showRules"></the-rules>
-  <button @click="triggerRules">{{ showOrHide }} Rules</button>
-
-  <the-header> </the-header>
+  <the-header></the-header>
 
   <game-items v-if="!playerSelected"></game-items>
   <game-result v-if="playerSelected"></game-result>
+  <router-link @click="triggerRules" to="/rules"
+    >{{ showOrHide }} Rules</router-link
+  >
+  <router-view v-if="showRules"></router-view>
 </template>
 <script>
 import TheHeader from "./components/TheHeader.vue";
-import TheRules from "./components/TheRules.vue";
 import GameItems from "./components/GameItems.vue";
 import GameResult from "./components/GameResult.vue";
 
 export default {
   components: {
     TheHeader,
-    TheRules,
     GameResult,
     GameItems,
   },
