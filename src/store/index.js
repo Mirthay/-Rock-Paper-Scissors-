@@ -10,7 +10,7 @@ const store = createStore({
           Paper beats Rock <br><br> 
           Rock beats Scissors <br> <br>
           Scissors beats Paper </p> `,
-      showRules: false,
+      showRules: true,
       playerSelected: null,
       pcSelected: null,
       gameResult: null,
